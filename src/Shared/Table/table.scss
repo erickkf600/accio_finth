@@ -1,0 +1,121 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+
+.table-mobile {
+    margin-top: 15px;
+    display: block;
+    @include respond-to('medium') {
+        display: none;
+    }
+    li {
+        padding: 13px;
+        box-shadow: 0px 4px 11px -2px rgba(163, 179, 204, 0.5);
+        color: $dark;
+        position: relative;
+        height: 170px;
+    }
+    &__head {
+        display: flex;
+        flex-direction: column;
+        height: 71px;
+        justify-content: flex-start;
+        p {
+            font: {
+                size: $text16px;
+                weight: bold;
+            }
+        }
+        span {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &:before {
+            content: '\e902';
+            position: absolute;
+            right: -25px;
+            top: 0;
+            width: 25px;
+            height: 71px;
+            background: $dark;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 11px -2px rgba(163, 179, 204, 0.5);
+            font: {
+                family: 'icomoon';
+                weight: 900;
+            }
+        }
+    }
+    &__content {
+        margin-top: 20px;
+        p {
+            display: grid;
+            grid-template-columns: 0.3fr 0.5fr;
+            padding: 4px 0;
+        }
+        button {
+            display: flex;
+            margin: auto 0 auto auto;
+            font-size: $text20px;
+        }
+    }
+}
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    position: relative;
+    display: none;
+    @include respond-to('medium') {
+        display: table;
+    }
+    thead,
+    tbody {
+        background: transparent;
+        tr {
+            text-align: left;
+            height: 45px;
+            font-family: $arimo;
+        }
+    }
+
+    thead {
+        th {
+            color: $blue-medium;
+            text-transform: capitalize;
+            padding: 19px 15px;
+            font: {
+                weight: 600;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background: $white;
+            box-shadow: 0px 4px 11px -2px rgba(163, 179, 204, 0.5);
+            color: $dark;
+            font: {
+                size: $text14px;
+            }
+            td {
+                padding: 19px 15px;
+                // &:first-child {
+                //     padding: 19px 15px 19px 10px;
+                // }
+
+                .delete {
+                    font-size: $text16px;
+                }
+            }
+        }
+    }
+    .delete-section {
+        &__box {
+            top: 0;
+            right: 0;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    position: relative;
+    thead,
+    tbody {
+        background: transparent;
+        .mobile-btn {
+            position: absolute;
+            height: 52px !important;
+            margin-top: 5px;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: $dark;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: {
+                size: $text20px;
+            }
+        }
+        td {
+            position: relative;
+            @media (max-width: 992px) {
+                display: flex;
+                align-items: center;
+                flex-flow: row;
+                padding: 10px;
+                justify-content: space-between;
+            }
+        }
+        @media (max-width: 992px) {
+            [data-th]::before {
+                content: attr(data-th);
+                font-weight: bold;
+            }
+        }
+        tr {
+            @media (max-width: 992px) {
+                overflow: hidden;
+                height: 52px;
+                display: block;
+                margin-bottom: 8px;
+                position: relative;
+                @include transition(0.3s);
+                &:before {
+                    content: '\e902';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 30px;
+                    height: 52px;
+                    background: $dark;
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font: {
+                        family: 'icomoon';
+                        size: $text20px;
+                    }
+                }
+            }
+            text-align: left;
+            height: 45px;
+            font-family: $arimo;
+        }
+        .show {
+            height: 220px;
+            @include respond-to('medium') {
+                height: 45px;
+            }
+        }
+    }
+
+    thead {
+        display: none;
+        @include respond-to('medium') {
+            display: table-header-group;
+        }
+        th {
+            color: $blue-medium;
+            text-transform: capitalize;
+            padding: 19px 15px;
+            font: {
+                weight: 600;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background: $white;
+            box-shadow: 0px 4px 11px -2px rgba(163, 179, 204, 0.5);
+            color: $dark;
+            font: {
+                size: $text14px;
+            }
+            td {
+                padding: 19px 15px;
+            }
+            .action {
+                button {
+                    font-size: $text16px;
+                }
+            }
+        }
+    }
+    .delete-section {
+        &__box {
+            top: 0;
+            right: 0;
+        }
+    }
+}

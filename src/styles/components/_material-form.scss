@@ -1,0 +1,31 @@
+.MuiFormControl-root {
+    width: 100%;
+    margin-top: 20px !important;
+    .MuiFormLabel-root.Mui-focused:not(.Mui-error) {
+        color: $blue-medium !important;
+    }
+    .MuiFilledInput-underline:not(.Mui-error) {
+        &:after {
+            border-color: $blue-medium !important;
+        }
+    }
+}
+.MuiFilledInput-root {
+    background: #fafafa !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-top: solid 1px #e0e0e0;
+    border-left: solid 1px #e0e0e0;
+    border-right: solid 1px #e0e0e0;
+    &:hover {
+        &:before {
+            border-width: 2px !important;
+        }
+    }
+    &:before {
+        border-color: $blue-medium !important;
+    }
+    .MuiSelect-select:focus {
+        background: #fcfcfc !important;
+    }
+}

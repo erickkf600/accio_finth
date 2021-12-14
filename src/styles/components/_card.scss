@@ -1,0 +1,92 @@
+.card {
+    width: 300px;
+    background: $white;
+    box-shadow: $card-shadow;
+    border-radius: $radius5;
+    &__padding {
+        padding: 20px 27px;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 17px;
+        p {
+            font: {
+                size: $text18px;
+                weight: bold;
+            }
+        }
+        &-actions {
+            button {
+                font-size: $text18px;
+                margin-right: 15px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__body {
+        p {
+            font: {
+                weight: bold;
+                size: $header24px;
+            }
+        }
+        &-ready {
+            margin: 20px 0;
+            width: 94%;
+            border-radius: $radius5;
+            padding: 13px 8px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: $extra-light-gray;
+            display: flex;
+            justify-content: space-between;
+            p {
+                z-index: 1;
+                font: {
+                    size: $text16px;
+                    weight: bold;
+                }
+            }
+            &-fill {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+
+                &--low {
+                    background: #f00;
+                }
+                &--medium {
+                    background: #ffeb00;
+                }
+                &--high {
+                    background: #89f000 !important;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            font: {
+                size: $text14px;
+                weight: bold;
+            }
+            span {
+                margin-left: 15px;
+            }
+        }
+    }
+}

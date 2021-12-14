@@ -1,0 +1,77 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.slide-toggle {
+    position: relative;
+    display: inline-block;
+    width: 2.5rem;
+    height: 1.5rem;
+
+    input {
+        &:checked + .slider {
+            background-color: $dark;
+            &:before {
+                -webkit-transform: translateX(0.9rem);
+                -ms-transform: translateX(0.9rem);
+                transform: translateX(0.9rem);
+                background-color: $white;
+            }
+        }
+        &:focus {
+            + {
+                box-shadow: 0 0 1px $dark;
+            }
+        }
+        &:disabled {
+            + {
+                .slider {
+                    &:before {
+                        background-color: $blue-light;
+                    }
+                    background-color: $blue-medium;
+                    border: 1px solid $blue-light;
+                }
+            }
+        }
+        &:disabled {
+            &:checked {
+                + {
+                    .slider {
+                        &:before {
+                            background-color: $white;
+                        }
+                        background-color: $blue-light;
+                        border: 1px solid $blue-light;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 34px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid $dark;
+        background-color: transparent;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+        &:before {
+            border-radius: 50%;
+            position: absolute;
+            content: '';
+            height: 1rem;
+            width: 1rem;
+            left: 4px;
+            bottom: 3px;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            background-color: $dark;
+        }
+    }
+}

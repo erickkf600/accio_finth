@@ -1,0 +1,41 @@
+.btn {
+    border: solid 2px $dark;
+    border-radius: $radius5;
+    padding: 10px 15px;
+    background: $dark;
+    color: $white;
+    &:disabled {
+        background: $gray;
+        cursor: not-allowed;
+    }
+
+    font: {
+        family: $arimo;
+        size: $text16px;
+        weight: bold;
+    }
+    &:hover {
+        background: lighten($dark, 10%);
+    }
+
+    &--light,
+    &--extra-light {
+        background: $white;
+        color: $dark;
+        &:hover {
+            background: $white;
+        }
+        &:disabled {
+            color: $gray;
+            border-color: $gray;
+            background: transparent;
+        }
+    }
+
+    &--extra-light {
+        border: none;
+    }
+    &:focus {
+        outline: none;
+    }
+}

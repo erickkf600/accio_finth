@@ -1,0 +1,64 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+
+.header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    z-index: 3;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-left: $closed;
+        padding: 0 19px;
+        @include respond-to('medium') {
+            padding: 0 36px;
+            margin-left: $opened;
+        }
+        &-calendar {
+            background: $white;
+            width: 72px;
+            height: 50px;
+            border-radius: $radius5;
+            font-size: $text27px;
+        }
+
+        &-user {
+            display: flex;
+            align-items: center;
+            &-initials {
+                width: 50px;
+                height: 50px;
+                background: $blue-light;
+                color: $blue-dark;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: $radius5;
+                margin-right: 0;
+                font: {
+                    weight: bold;
+                    size: $text20px;
+                }
+                @include respond-to('medium') {
+                    margin-right: 15px;
+                }
+            }
+            &-info {
+                color: $blue-dark;
+                display: none;
+                @include respond-to('medium') {
+                    display: block;
+                }
+                font: {
+                    weight: bold;
+                    size: $text16px;
+                }
+                small {
+                    color: $gray;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

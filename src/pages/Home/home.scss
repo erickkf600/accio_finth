@@ -1,0 +1,24 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+
+.home {
+    &__cards {
+        margin-top: $content-margin;
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+            margin: auto auto 32px 0;
+            width: 100%;
+            @include respond-to('medium') {
+                margin: 8px;
+                width: 260px;
+            }
+            @include respond-to('large') {
+                width: 300px;
+            }
+            @include respond-to('extra-large') {
+                margin: 15px;
+            }
+        }
+    }
+}

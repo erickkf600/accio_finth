@@ -1,0 +1,132 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+.menu {
+    box-shadow: $box-shadow;
+    z-index: 3;
+    &__content {
+        padding: 21px;
+        margin-top: 9px;
+        &-logo {
+            img {
+                width: 82%;
+                margin: auto;
+                display: none;
+                @include respond-to('medium') {
+                    display: flex;
+                }
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+
+            a {
+                width: 90%;
+                padding: 15px;
+                margin: 10px;
+                @include transition(0.5s);
+                display: grid;
+                grid-template-columns: 20px 1fr;
+                column-gap: 23px;
+                border-radius: $radius5;
+                color: $dark;
+                font: {
+                    size: $text14px;
+                    weight: bold;
+                }
+                span {
+                    font-size: $text16px;
+                }
+                &:first-child {
+                    span {
+                        font-size: $text20px;
+                    }
+                }
+                &:nth-child(3) {
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+                &:nth-child(4) {
+                    span {
+                        margin-left: -3px;
+                    }
+                }
+                &:nth-child(n + 3) {
+                    span {
+                        font-size: $text21px;
+                    }
+                }
+                &:last-child {
+                    position: absolute;
+                    bottom: 27px;
+                    left: 5px;
+                    right: 0;
+                    margin: auto;
+                    display: flex;
+                    width: 76%;
+                    @include respond-to('medium') {
+                        left: 0;
+                    }
+                }
+                &:hover,
+                &.active {
+                    background: $dark;
+                    color: $white;
+                    span {
+                        position: relative;
+                        &:after {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 11px;
+                            color: $white;
+                            opacity: 0.8;
+                        }
+                    }
+                    &:nth-child(1) {
+                        span {
+                            &:after {
+                                content: '\e90e';
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        span {
+                            &:after {
+                                content: '\e90d';
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        span {
+                            &:after {
+                                content: '\e90f';
+                                font-size: $text20px;
+                                left: -5px;
+                            }
+                        }
+                    }
+                    &:nth-child(4) {
+                        span {
+                            &:after {
+                                content: '\e910';
+                                font-size: $text13px;
+                                left: 4px;
+                                top: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

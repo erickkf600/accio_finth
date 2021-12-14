@@ -1,0 +1,56 @@
+@import './../../styles/utils/variables';
+@import './../../styles/utils/mixins';
+
+.select-mounth {
+    width: 316px;
+    height: 190px;
+    background: $white;
+    box-shadow: $box-shadow;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 32px;
+    border-radius: $radius10;
+    @include respond-to('medium') {
+        left: auto;
+        right: auto;
+        margin: 0;
+    }
+
+    &__year {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+            font: {
+                size: $text18px;
+                weight: bold;
+            }
+        }
+        button {
+            color: $blue-dark;
+            font: {
+                size: $text16px;
+                weight: 900;
+            }
+        }
+    }
+
+    &__mounth {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 24px;
+        &-select {
+            padding: 10px 15px;
+            border: solid 1px transparent;
+            font: {
+                size: $text14px;
+            }
+            &--selected {
+                border-color: $dark;
+            }
+        }
+    }
+}

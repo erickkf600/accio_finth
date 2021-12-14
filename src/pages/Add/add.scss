@@ -1,0 +1,75 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.add {
+    &__content {
+        margin-top: $content-margin;
+        .card {
+            min-width: $width90;
+            display: block;
+            margin: auto;
+        }
+        &-form {
+            padding: 20px;
+            @include respond-to('medium') {
+                padding: 20px 50px;
+            }
+            &-user {
+                display: flex;
+                align-items: center;
+                p {
+                    text-align: left;
+                    position: relative;
+                    top: 10px;
+                    margin-right: 35px;
+                    font: {
+                        weight: bold;
+                        size: $text14px;
+                    }
+                }
+            }
+            &-purchase {
+                display: grid;
+                grid-template-columns: 1fr;
+                position: relative;
+                @include respond-to('medium') {
+                    grid-template-columns: 1fr 0.4fr 0.3fr 0.3fr 0.3fr;
+                    column-gap: 30px;
+                }
+                &-remove {
+                    font-size: $text36px;
+                    color: $blue-medium;
+                    margin-top: 20px;
+                    @include respond-to('medium') {
+                        position: absolute;
+                        font-size: $text24px;
+                        right: -46px;
+                        top: 0;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            &-add {
+                margin: 25px 0 auto auto;
+                display: flex;
+                color: $blue-medium;
+                font: {
+                    size: $text16px;
+                    family: $arimo;
+                    weight: bold;
+                }
+            }
+            &-add-purch {
+                margin: auto;
+                display: flex;
+            }
+        }
+    }
+}
+.full {
+    @include respond-to('medium') {
+        grid-column: 1/6 !important;
+    }
+}
