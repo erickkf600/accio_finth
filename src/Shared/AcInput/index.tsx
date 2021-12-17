@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { createRef, useEffect } from 'react'
 import { useClickOutside } from '../../utils/hooks/click-outside.hook'
 import './ac-input.scss'
 const AcInput: React.FC<any> = input => {
+    const ref: any = createRef()
     const clickOutside = useClickOutside(() => {
         const input: any = document.querySelector('.ac-select')
         input.classList.remove('ac-select--show')
     })
+
+    useEffect(() => {
+        if (input.selected) {
+            const selected: any = document.querySelector('.ac-select-label')
+            selected.innerHTML = input.options
+                .find((e: any) => e.value === input.selected)
+                ?.label.captalizeCase()
+            console.log(selected)
+        }
+    }, [])
     const toggle = (e: any) => {
         const input: any = document.querySelector('.ac-select')
         const optionsList: any = document.querySelectorAll('.ac-options')
@@ -19,30 +30,37 @@ const AcInput: React.FC<any> = input => {
             })
         })
     }
+
+    const sendValue = (e: any) => {
+        console.log(e.target.value)
+    }
     return (
         <div className="ac-select-wrapper" ref={clickOutside}>
             <div className="ac-select-label" onClick={(e: any) => toggle(e)}>
                 Selecione
             </div>
             <div className="ac-select">
-                <div className="ac-options">
-                    <input name="test" type="radio" id="opt1" hidden />
-                    <label className="ac-options-labels" htmlFor="opt1">
-                        Option 1
-                    </label>
-                </div>
-                <div className="ac-options">
-                    <input name="test" type="radio" id="opt2" hidden />
-                    <label className="ac-options-labels" htmlFor="opt2">
-                        Option 2
-                    </label>
-                </div>
-                <div className="ac-options">
-                    <input name="test" type="radio" id="opt3" hidden />
-                    <label className="ac-options-labels" htmlFor="opt3">
-                        Option 3
-                    </label>
-                </div>
+                {input.options.map((opt: any, i: number) => (
+                    <div
+                        className="ac-options"
+                        key={i}
+                        onClick={() => ref.current.click()}
+                    >
+                        <input
+                            name="test"
+                            type="radio"
+                            hidden
+                            ref={ref}
+                            onChange={() => {}}
+                            onClick={(e: any) => sendValue(e)}
+                            value={opt.value}
+                            checked
+                        />
+                        <label className="ac-options-labels">
+                            {opt.label.captalizeCase()}
+                        </label>
+                    </div>
+                ))}
             </div>
         </div>
     )

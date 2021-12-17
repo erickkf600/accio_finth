@@ -58,7 +58,12 @@ const Deatails: FC = () => {
                 edit={edit}
                 setEdit={setEdit}
             />
-            <AcInput />
+            <AcInput
+                options={[
+                    { label: 'nubank', value: '01' },
+                    { label: 'willbank', value: '02' },
+                ]}
+            />
         </>
     )
 }
