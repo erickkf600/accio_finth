@@ -132,7 +132,8 @@ const Template: React.FC<any> = input => {
                                     name="obs"
                                     variant="filled"
                                     label="Observações"
-                                    defaultValue="Adiconar: Desabilitar o seleção de usuario se tiver mais de 1 array e limpar os selects"
+                                    defaultValue="Adiconar: Desabilitar o seleção de usuario se
+                                    tiver mais de 1 array e limpar os selects"
                                     multiline
                                     rows={4}
                                     error={

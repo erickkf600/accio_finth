@@ -9,10 +9,10 @@ interface input {
     primaryButton?: string
     className?: string
     callBack?: any
+    index?: number
 }
 const MensageBox: React.FC<input> = input => {
     const { confirmModal, setConfirmModal } = useConfirmBoxContext()
-
     return (
         <>
             <div
@@ -37,7 +37,7 @@ const MensageBox: React.FC<input> = input => {
                     {!!input.primaryButton && (
                         <button
                             className="btn"
-                            onClick={() => input.callBack()}
+                            onClick={() => input.callBack(input?.index)}
                         >
                             {input.primaryButton}
                         </button>

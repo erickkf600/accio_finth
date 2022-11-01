@@ -1,5 +1,5 @@
 import { Routes } from '../interfaces/routes.interface'
-import { Add, Confi, Home, Users } from './lazy-imports'
+import { Add, Confi, Home, Investiments } from './lazy-imports'
 
 export const Pages: Routes[] = [
     {
@@ -15,10 +15,10 @@ export const Pages: Routes[] = [
         component: Add,
     },
     {
-        path: '/usuarios',
-        name: 'Ferramentas',
+        path: '/investimentos',
+        name: 'Investimentos',
         icon: 'icon-data',
-        component: Users,
+        component: Investiments,
     },
     {
         path: '/config',

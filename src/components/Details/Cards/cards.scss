@@ -1,0 +1,40 @@
+@import './../../../styles/utils/variables';
+@import './../../../styles/utils/mixins';
+
+.total-cards {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    @include respond-to('extra-large') {
+        width: $width80;
+    }
+    .cr {
+        width: 250px;
+        height: 150px;
+        background: #fff;
+        margin-right: 15px;
+        border-radius: $radius5;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #fff;
+            width: 5px;
+            height: 100%;
+        }
+        &.nubank {
+            &:before {
+                background: $nubank;
+            }
+        }
+        &.willbank {
+            &:before {
+                background: $willbank;
+            }
+        }
+    }
+}

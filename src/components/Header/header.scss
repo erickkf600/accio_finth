@@ -3,7 +3,7 @@
 
 .header {
     position: fixed;
-    top: 20px;
+    top: 0;
     width: 100%;
     z-index: 3;
     &__content {
@@ -11,8 +11,9 @@
         justify-content: space-between;
         margin-left: $closed;
         padding: 0 19px;
+        @include transition(.2s);
         @include respond-to('medium') {
-            padding: 0 36px;
+            padding: 10px 36px;
             margin-left: $opened;
         }
         &-calendar {
@@ -21,11 +22,13 @@
             height: 50px;
             border-radius: $radius5;
             font-size: $text27px;
+            box-shadow: 0px 0px 9px -3px rgba(0,0,0,0.3);
         }
 
         &-user {
             display: flex;
             align-items: center;
+            margin: auto 0 auto auto;
             &-initials {
                 width: 50px;
                 height: 50px;

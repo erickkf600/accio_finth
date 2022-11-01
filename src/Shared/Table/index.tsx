@@ -1,6 +1,5 @@
 import React from 'react'
 import { TableContent } from '../../interfaces/table.interface'
-import MensageBox from '../MensageBox'
 import { useConfirmBoxContext } from '../MensageBox/toggle.provider'
 import './table.scss'
 
@@ -12,7 +11,6 @@ interface input {
 }
 const Table: React.FC<input> = input => {
     const { setConfirmModal } = useConfirmBoxContext()
-
     return (
         <>
             <table className="table">
@@ -25,24 +23,21 @@ const Table: React.FC<input> = input => {
                     </tr>
                 </thead>
                 <tbody className="table__body">
-                    {input.body.map((el: any, i: number) => (
-                        <tr key={i}>
+                    {input.body.map((el: any, index: number) => (
+                        <tr key={index}>
                             {input.head.map((h: TableContent, ii: number) => (
-                                <td key={ii}>{el[h.key]}</td>
+                                <td key={ii}>
+                                    {h?.currency && 'R$ '}
+                                    {el[h.key]}
+                                </td>
                             ))}
                             {input.hasDel && (
                                 <td className="delete-section">
-                                    <MensageBox
-                                        className="delete-section__box"
-                                        title="Excluir"
-                                        text="Deseja Realmente remover essa compra da lista?"
-                                        secondaryButton="Cancelar"
-                                        primaryButton="Excluir"
-                                        callBack={() => input.removeSession(i)}
-                                    />
                                     <button
                                         className="icon-trash-2 delete"
-                                        onClick={() => setConfirmModal(true)}
+                                        onClick={() =>
+                                            input.removeSession(index)
+                                        }
                                     ></button>
                                 </td>
                             )}
@@ -50,6 +45,8 @@ const Table: React.FC<input> = input => {
                     ))}
                 </tbody>
             </table>
+
+            {/* input.removeSession(i) */}
 
             <ul className="table-mobile">
                 <li>

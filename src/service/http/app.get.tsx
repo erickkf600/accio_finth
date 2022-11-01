@@ -1,7 +1,5 @@
 import { AxiosResponse } from 'axios'
 import { api, axiosRequestConfiguration } from '../../api.axios'
-import { useSessionStorage } from '../../components/SelectMounth/toggle.provider'
-import { Cards } from '../../interfaces/Cards.interface'
 import { Debiters } from '../../interfaces/DebitersResponse.interface'
 import { Month } from '../../interfaces/MonthResponse.interface'
 import { Users } from '../../interfaces/Users.interface'
@@ -11,6 +9,7 @@ export const getDebiters = (queryParams: {
     num: number
     year: number
 }): Promise<Debiters> => {
+    console.log(queryParams)
     return new Promise((resolve, reject) => {
         axiosInstance
             .get(`debiters/${queryParams.num}/${queryParams.year}`)
@@ -29,7 +28,7 @@ export const getPurchases = (
 ): Promise<Debiters> => {
     return new Promise((resolve, reject) => {
         axiosInstance
-            .get(`purchases/${userid}/${monthref}/${year}`)
+            .get(`purchases-by-user/${userid}/${monthref}/${year}`)
             .then((value: AxiosResponse) => {
                 resolve(value.data)
             })
@@ -62,10 +61,15 @@ export const getUsers = (): Promise<Users> => {
             })
     })
 }
-export const getCards = (): Promise<Cards> => {
+
+export const getMovementsList = (
+    year: number,
+    limit: number,
+    page: number,
+): Promise<any> => {
     return new Promise((resolve, reject) => {
         axiosInstance
-            .get('cards')
+            .get(`moviments/${year}/${page}/${limit}`)
             .then((value: AxiosResponse) => {
                 resolve(value.data)
             })

@@ -19,7 +19,7 @@ const HomeView: React.FC<homeViewTypes> = input => (
         )}
 
         <div className="home__cards">
-            {input.debiters.map((el: Debiters, i) => (
+            {input.debiters.map((el: Debiters, i: number) => (
                 <div className="card" key={i}>
                     <div className="card__padding">
                         <div className="card__header">

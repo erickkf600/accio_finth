@@ -19,9 +19,10 @@ function applyDataMask(field: any) {
             value.replace(/[^\d]/g, '').replace(/(\d\d?)$/, '.$1'),
         ).toFixed(2)
 
-        if (value === '0.00') {
+        if (value === '0.00' || value === 'NaN') {
             return
         }
+
         field.value = value
     }
 }

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { Cards } from '../../interfaces/Cards.interface'
-import * as response from './../http/app.get'
+import * as response from './../http/utils.query'
 
 export const CardsContext = createContext<{
     cards: Cards[]
