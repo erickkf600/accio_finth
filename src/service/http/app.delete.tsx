@@ -5,7 +5,7 @@ const axiosInstance = api(axiosRequestConfiguration)
 export const deleteDebiters = (id: number): Promise<boolean> => {
     return new Promise((resolve, reject) => {
         axiosInstance
-            .delete(`debiters/${id}`)
+            .delete(`debiter/${id}`)
             .then((value: AxiosResponse) => {
                 resolve(value.data)
             })

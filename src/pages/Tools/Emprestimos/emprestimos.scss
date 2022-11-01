@@ -1,0 +1,28 @@
+@import './../../../styles/utils/mixins';
+@import './../../../styles/utils/variables';
+
+$padding: 15px 25px;
+
+.emprestimo-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 250px;
+    background: $white;
+    position: relative;
+    &__head {
+        padding: $padding;
+        display: flex;
+        justify-content: space-between;
+        background: $extra-light-gray;
+        p {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        button {
+            position: absolute;
+            right: 0;
+        }
+    }
+}

@@ -4,8 +4,6 @@ export interface Purchases {
     instalment_num: number
     total_instalments: number
     instalment_value: number
-    card: {
-        id: number
-        name: string
-    }
+    card_id: number
+    card_name: string
 }

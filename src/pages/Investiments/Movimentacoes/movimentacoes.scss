@@ -1,0 +1,42 @@
+
+@import './../../../styles/utils/mixins';
+@import './../../../styles/utils/variables';
+
+.movimentacoes{
+    padding-bottom: 20px;
+    &__head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__card{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .table {
+        thead {
+            tr {
+                th {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    &:nth-child(3) {
+                        width: 70px;
+                    }
+                    &:nth-child(4) {
+                        width: 60px;
+                    }
+                    &:nth-child(8) {
+                        width: 80px;
+                    }
+
+                    &:last-child{
+                        text-align: center;
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

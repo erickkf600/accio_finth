@@ -14,3 +14,16 @@ export const postDebiters = (data: any): Promise<boolean> => {
             })
     })
 }
+
+export const postMovements = (data: any): Promise<boolean> => {
+    return new Promise((resolve, reject) => {
+        axiosInstance
+            .post(`moviments`, data)
+            .then((value: AxiosResponse) => {
+                resolve(value.data)
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
+}

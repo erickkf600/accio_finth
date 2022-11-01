@@ -1,6 +1,11 @@
 @import './../../styles/utils/variables';
 @import './../../styles/utils/mixins';
 
+%align {
+    display: flex;
+    align-items: center;
+}
+
 .table {
     table-layout: fixed;
     width: 100%;
@@ -117,6 +122,42 @@
         &__box {
             top: 0;
             right: 0;
+        }
+    }
+}
+
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    p{
+        margin-right: 20px;
+        font: {
+            weight: 700;
+            size: 16px;
+        }
+    }
+    &__total-items{
+       @extend %align;
+    }
+
+    &__page{
+        @extend %align;
+        select{
+            width: 50px !important
+        }
+        button{
+            color: #000;
+            &:disabled{
+                color: #ccc
+            }
+        }
+        .back{
+            margin-right: 20px;
+        }
+        .next{
+            margin-left: 9px;
         }
     }
 }

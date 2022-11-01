@@ -1,6 +1,20 @@
 @import './../../styles/utils/variables';
 @import './../../styles/utils/mixins';
-
+.new-tr {
+    display: none !important;
+    &.show {
+        display: table-row !important;
+    }
+}
+.nopT {
+    padding: 15px 15px !important;
+    @include respond-to('medium') {
+        padding: 0 15px !important;
+    }
+}
+.pT {
+    padding: 19px 15px !important;
+}
 .datails {
     .card {
         width: 100%;
@@ -36,6 +50,42 @@
     }
 }
 
+.add-button {
+    background: $light-green;
+    margin: 26px 0 0px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border: solid 1px transparent;
+    @include transition(0.3s);
+    @include border-radius(4px);
+    color: $dark-green;
+    display: none;
+    @include respond-to('medium') {
+        display: block;
+    }
+    span {
+        margin-left: 15px;
+    }
+    &:hover {
+        border-color: $dark-green;
+    }
+}
+.insert-obs {
+    textarea {
+        width: 99.4%;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-size: $text20px;
+}
 // .head {
 //     display: flex;
 //     justify-content: space-between;

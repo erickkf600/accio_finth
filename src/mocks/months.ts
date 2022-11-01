@@ -1,4 +1,4 @@
-export const meses: { title: string; value: string; full_name: string }[] = [
+export const months: { title: string; value: string; full_name: string }[] = [
     { title: 'Jan', value: '01', full_name: 'janeiro' },
     { title: 'Fev', value: '02', full_name: 'fevereiro' },
     { title: 'Mar', value: '03', full_name: 'março' },

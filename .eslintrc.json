@@ -18,6 +18,7 @@
         "prettier/prettier": "error",
         "react/display-name": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+        "max-len": ["error", { "code": 120 }],
         "@typescript-eslint/naming-convention": [
             "error",
             {

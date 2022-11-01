@@ -1,9 +1,8 @@
 import React from 'react'
-
 const Template: React.FC = () => {
     return (
         <section>
-            <p>Ferramentas</p>
+            <h1>Kanban</h1>
         </section>
     )
 }

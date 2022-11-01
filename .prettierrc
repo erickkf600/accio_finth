@@ -4,5 +4,6 @@
     "arrowParens": "avoid",
     "trailingComma": "all",
     "endOfLine": "auto",
-    "semicolons": false
+    "semicolons": false,
+    "prettier.printWidth": 120
  }
